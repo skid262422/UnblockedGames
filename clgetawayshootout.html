@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Getaway Shootout</title>
 <style>
-  /* Make the game container fill the whole viewport */
   html, body {
     margin: 0;
     padding: 0;
@@ -38,6 +37,11 @@
 <script src="https://cdn.jsdelivr.net/gh/lee2sman/everyday@d45d601d2c4d60adf809a0b677c00b7d12aba7e9/96/TemplateData/UnityProgress.js"></script>
 
 <script>
+  // Request fullscreen when page loads
+  document.documentElement.requestFullscreen().catch(err => {
+    console.log("Fullscreen request failed:", err);
+  });
+
   // Load the Unity WebGL game
   var gameInstance = UnityLoader.instantiate(
     "gameContainer",
